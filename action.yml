@@ -1,0 +1,9 @@
+name: "GitHub Action for deploying on Nife"
+description: "Allows deploying and managing on Nife"
+author: Nife
+branding:
+  icon: "upload-cloud"
+  color: "Blue"
+runs:
+  using: "docker"
+  image: "Dockerfile"
