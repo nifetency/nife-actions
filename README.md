@@ -22,7 +22,7 @@ jobs:
           args: "deploy"
 ```
 
-See the [nifectl](http://docs.nife.io/) GitHub project for more information on using `nifectl`.
+See the [nifectl](https://docs.nife.io/) GitHub project for more information on using `nifectl`.
 
 ## Secrets
 
