@@ -26,5 +26,5 @@ See the [nifectl](https://docs.nife.io/) GitHub project for more information on 
 
 ## Secrets
 
-`NIFE_ACCESS_TOKEN` - **Required**. The token to use for authentication. You can find a token by running `nifectl auth token` or going to your [user settings(https://ui-apps.nifetency.com)
+`NIFE_ACCESS_TOKEN` - **Required**. The token to use for authentication. You can find a token by running `nifectl auth token` or going to your [user settings(https://launch.nife.io/)
 
