@@ -15,7 +15,7 @@ jobs:
       # This step checks out a copy of your repository.
       - uses: actions/checkout@v2
       # This step runs `nifectl deploy`.
-      - uses: nifetency/nifectl-actions@1.0
+      - uses: nifetency/nife-actions@1.0
         env:
           API_TOKEN: ${{ secrets.NIFE_ACCESS_TOKEN }}
         with:
