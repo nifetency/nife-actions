@@ -2,10 +2,16 @@ FROM alpine
 
 RUN apk add --no-cache curl
 
-RUN curl -L https://api.nife.io/release/install.sh | sh
+RUN wget https://api.nife.io/release/install.sh
 
-RUN ["chmod", "+x", "entrypoint.sh"]
+RUN ["chmod", "+x", "install.sh"]
+
+RUN sh ./install.sh
 
 COPY entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+RUN ["chmod", "+x", "/entrypoint.sh"]
+
+# RUN pwd && ls -ltr
+
+ENTRYPOINT ["./entrypoint.sh"]
