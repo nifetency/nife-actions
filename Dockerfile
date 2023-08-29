@@ -6,7 +6,7 @@ RUN wget https://api.nife.io/release/install.sh
 
 RUN ["chmod", "+x", "install.sh"]
 
-RUN sh ./install.sh -vx
+RUN sh ./install.sh
 
 COPY entrypoint.sh /entrypoint.sh
 
