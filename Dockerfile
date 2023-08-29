@@ -8,10 +8,10 @@ RUN ["chmod", "+x", "install.sh"]
 
 RUN sh ./install.sh
 
-COPY entrypoint.sh /entrypoint.sh
+# COPY entrypoint.sh /entrypoint.sh
 
-RUN ["chmod", "+x", "/entrypoint.sh"]
+# RUN ["chmod", "+x", "/entrypoint.sh"]
 
-RUN pwd && ls -ltr
+# RUN pwd && ls -ltr
 
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["/bin/sh", "-c", "/root/.nife/bin/nifectl $*"]
