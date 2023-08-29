@@ -19,4 +19,4 @@ RUN ["chmod", "+x", "/entrypoint.sh"]
 RUN pwd && ls -ltr
 
 # ENTRYPOINT ["/bin/sh", "-c", "/root/.nife/bin/nifectl $*"]
-ENTRYPOINT [ "./entrypoint.sh" ]
+ENTRYPOINT [ "/entrypoint.sh" ]
