@@ -11,6 +11,8 @@ RUN curl -L https://api.nife.io/release/install.sh | NIFECTL_INSTALL=/usr/local 
 # RUN sh ./install.sh
 
 COPY entrypoint.sh /entrypoint.sh
+COPY nife.toml /nife.toml
+
 
 RUN apk add dos2unix && dos2unix /entrypoint.sh
 
