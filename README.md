@@ -62,7 +62,7 @@ You can use the `args` parameter to run any `nifectl` command:
 ## Documentation
 
 For more information on `nifectl` and available commands, visit the [Nife Documentation](https://docs.nife.io/CLI/help).
-For more detailed information on GitHub Actions, check the [Deploy App with GitHub Actions](https://docs.nife.io/Deploy-App/Automation/Github-actions).
+For more detailed information on GitHub Actions, check the [Deploy App with GitHub Actions](https://docs.nife.io/Quick-Start/Nife-GIT-Actions).
 
 ---
 
