@@ -22,13 +22,11 @@ jobs:
     name: Deploy to Nife
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      
-      - name: Checkout code
+      # This step checks out a copy of your repository
+      - name: Checkout repository
         uses: actions/checkout@v2
-      
+
+      # This step runs `nifectl deploy`.
       - name: Deploy to Nife
         uses: nifetency/nife-actions@2.4
         env:
