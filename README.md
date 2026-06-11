@@ -4,6 +4,8 @@ Deploy and manage applications on [Nife](https://nife.io/) using this GitHub Act
 
 ## Usage
 
+### Deploy Application to Nife
+
 Add a workflow file (e.g., `.github/workflows/deploy.yml`) to your repository:
 
 ```yaml
@@ -13,21 +15,55 @@ on:
   push:
     branches:
       - main
+      - master
 
 jobs:
   deploy:
+    name: Deploy to Nife
     runs-on: ubuntu-latest
     steps:
-      # This step checks out a copy of your repository
-      - name: Checkout repository
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      
+      - name: Checkout code
         uses: actions/checkout@v2
-      # This step runs `nifectl deploy`.
+      
       - name: Deploy to Nife
         uses: nifetency/nife-actions@2.4
         env:
           NIFE_ACCESS_TOKEN: ${{ secrets.NIFE_ACCESS_TOKEN }}
         with:
           args: "deploy"
+```
+
+### Deploy Site to Nife
+
+For site-specific deployments, create a separate workflow file (e.g., `.github/workflows/main.yml`):
+
+```yaml
+name: Deploy to Nife
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  deploy:
+    name: Deploy to Nife
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Deploy Site to Nife
+        uses: nifetency/nife-actions@2.4
+        env:
+          NIFE_ACCESS_TOKEN: ${{ secrets.NIFE_ACCESS_TOKEN }}
+        with:
+          args: "site redeploy --yes"
 ```
 
 ## Configuration
@@ -48,10 +84,17 @@ jobs:
 
 You can use the `args` parameter to run any `nifectl` command:
 
+### Application Commands
 - **Deploy:** `args: "deploy"`
 - **Status:** `args: "status"`
 - **List Secrets:** `args: "secrets list"`
 - **Logs:** `args: "logs"`
+
+### Site Commands
+- **Site List:** `args: "site list"`
+- **Site Deploy:** `args: "site deploy"`
+- **Site Redeploy:** `args: "site redeploy --yes"`
+- **Site Revert:** `args: "site revert"`
 
 ## Prerequisites
 
